@@ -1,8 +1,11 @@
+import React from "react";
+import Home from "./pages/Home";
+
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl text-red-300">Hello world!</h1>
+    <div className="min-h-screen bg-gray-900 text-white">
+      <Home />
     </div>
   );
 }
