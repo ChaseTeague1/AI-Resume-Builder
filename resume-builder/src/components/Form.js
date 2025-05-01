@@ -1,5 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 
+function Accordion({title, children}){
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div className="border border-gray-600 rounded-md">
+            <button
+                onClick={(e) => {
+                    e.preventDefault()
+                    setOpen(!open)
+                }}
+                className="w-full text-left px-4 py-2 bg-gray-700 text-white font-semibold"
+            >{title}</button>
+            {
+                open && <div className="p-4 bg-gray-800">{children}</div>
+            }
+        </div>
+    )
+}
 
 function Form({resumeData, setResumeData}){
 
@@ -12,6 +30,7 @@ function Form({resumeData, setResumeData}){
 
     return (
         <form className="space-y-4">
+        <Accordion title="Header">
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">
               Full Name
@@ -55,7 +74,7 @@ function Form({resumeData, setResumeData}){
             <label 
                 className="block text-sm font-medium text-gray-300 mb-1"
             >
-                Github
+                Github (github.com/)
             </label>
             <input 
                 type="text"
@@ -65,6 +84,7 @@ function Form({resumeData, setResumeData}){
                 className="w-full px-3 py-2 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
+          </Accordion>
 
           <div>
             <label 
