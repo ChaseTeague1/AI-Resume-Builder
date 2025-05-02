@@ -12,6 +12,7 @@ function Home() {
     github: "",
     experience: "",
     skills: "",
+    education: ""
   });
 
   const [selectedTemplate, setSelectedTemplate] = useState("classic");

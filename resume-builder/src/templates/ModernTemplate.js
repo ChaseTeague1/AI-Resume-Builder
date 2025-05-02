@@ -2,11 +2,11 @@ import React from "react";
 
 
 function ModernTemplate({data}){
-    const {fullName, jobTitle, experience, skill, email, github, summary} = data
+    const {fullName, jobTitle, experience, skill, email, github, summary, education} = data
 
     return (
         <div>
-            <div>
+            <div className="grid grid-cols-1">
                 <h1>{fullName || "Your Name"}</h1>
                 <h2>{jobTitle || "Job Title"}</h2>
             </div>

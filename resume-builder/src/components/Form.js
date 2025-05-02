@@ -4,7 +4,7 @@ function Accordion({title, children}){
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="border border-gray-600 rounded-md">
+        <div className="border border-gray-600 rounded-md hover:border-gray-500">
             <button
                 onClick={(e) => {
                     e.preventDefault()
@@ -86,21 +86,7 @@ function Form({resumeData, setResumeData}){
           </div>
           </Accordion>
 
-          <div>
-            <label 
-            className="block text-sm font-medium text-gray-300 mb-1"
-            >
-                Summary
-            </label>
-            <input 
-                name="summary"
-                rows="3"
-                value={resumeData.summary}
-                onChange={handleChange}
-                className="w-full px-3 py-2 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-          </div>
-
+          <Accordion title="Experience and Skills">
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">
               Experience
@@ -126,6 +112,39 @@ function Form({resumeData, setResumeData}){
               className="w-full px-3 py-2 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
+          </Accordion>
+
+          <Accordion title="Education">
+            <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">
+                    Education
+                </label>
+                <input 
+                type="text"
+                name="education"
+                value={resumeData.education}
+                onChange={handleChange}
+                className="w-full px-3 py-2 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+            </div>
+          </Accordion>
+
+          <Accordion title="Summary">
+          <div>
+            <label 
+            className="block text-sm font-medium text-gray-300 mb-1"
+            >
+                Summary
+            </label>
+            <input 
+                name="summary"
+                rows="3"
+                value={resumeData.summary}
+                onChange={handleChange}
+                className="w-full px-3 py-2 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+          </Accordion>
         </form>
     );
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 
 function ClassicTemplate({data}){
-    const {fullName, jobTitle, experience, skills, summary, email, github} = data;
+    const {fullName, jobTitle, experience, skills, summary, email, github, education} = data;
 
     return (
         <div className="text-white font-sans space-y-4">
